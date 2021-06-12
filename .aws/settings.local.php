@@ -18,4 +18,4 @@ $databases['default']['default'] = [
  */
 $settings['hash_salt'] = 'BmT6MoXiAj_y6ID8-uUW5qL5vkjkimNyD6FG9ExOZyC1zAIiv_GcHm2kMwW-F-CjMf1okUhDkgGoing';
 
-$settings['trusted_host_patterns'][] = '^localhost$';
+// $settings['trusted_host_patterns'][] = '^localhost$';
