@@ -10,7 +10,7 @@ jobs:
       # Step 1
       - uses: actions/checkout@v2
       # Step 2 
-      - run: cd test-ci-cd/
+      # - run: cd test-ci-cd/
       - run: composer install -o
         
   continuous-deployment:
