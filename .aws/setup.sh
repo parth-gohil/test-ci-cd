@@ -17,4 +17,4 @@ if [[ ! -d './web/sites/default/files' ]]
 then
     mkdir ./web/sites/default/files
 fi
-echo "this was a test"
+echo "this was a test, another test."
