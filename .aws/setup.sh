@@ -13,4 +13,7 @@ docker volume create db-data
 cp .aws/settings.local.php ./web/sites/default
 cp .aws/settings.php ./web/sites/default
 cp .aws/services.yml ./web/sites/default
-mkdir ./web/sites/default/files
+if [[ ! -d './web/sites/default/files' ]] 
+then
+    mkdir ./web/sites/default/files
+fi
