@@ -56,6 +56,6 @@ networks:
     driver: bridge
 
 volumes:
-  drupal-data: /home/ec2-user/test-ci-cd/web/
-  db-data: /home/ec2-user/test-ci-cd/db/
+  drupal-data:/home/ec2-user/test-ci-cd/web/
+  db-data:/home/ec2-user/test-ci-cd/db/
 #   certbot-etc:
