@@ -22,7 +22,7 @@ services:
       - internal
       - external
     volumes:
-      - ./web:/var/www/html
+      - ./:/var/www/html
 
   webserver:
     image: nginx:1.17.4-alpine
@@ -33,7 +33,7 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./web:/var/www/html
+      - ./:/var/www/html
       - ./nginx-conf:/etc/nginx/conf.d
     #   - certbot-etc:/etc/letsencrypt
     networks:
