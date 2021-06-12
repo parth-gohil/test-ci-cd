@@ -11,6 +11,8 @@ services:
       - ./db:/var/lib/mysql
     networks:
       - internal
+    ports:
+      - "33208:3306"
 
   drupal:
     image: drupal:8.7.8-fpm-alpine
