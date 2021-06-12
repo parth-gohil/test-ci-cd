@@ -8,7 +8,8 @@ services:
     restart: unless-stopped
     env_file: .aws/.env
     volumes:
-      - ./db:/var/lib/mysql
+      - db-data:/var/lib/mysql
+    #   - ./db:/docker-entrypoint-initdb.d
     networks:
       - internal
     ports:
@@ -57,7 +58,7 @@ networks:
   internal:
     driver: bridge
 
-# volumes:
+volumes:
 #   drupal-data:
-#   db-data:
+  db-data:
 #   certbot-etc:
