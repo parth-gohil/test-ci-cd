@@ -8,7 +8,7 @@ services:
     restart: unless-stopped
     env_file: .aws/.env
     volumes:
-      - /home/ec2-user/test-ci-cd/db/:/var/lib/mysql
+      - ./db:/var/lib/mysql
     networks:
       - internal
 
@@ -22,7 +22,7 @@ services:
       - internal
       - external
     volumes:
-      - /home/ec2-user/test-ci-cd/web/:/var/www/html
+      - ./web:/var/www/html
 
   webserver:
     image: nginx:1.17.4-alpine
@@ -33,9 +33,9 @@ services:
     ports:
       - 80:80
     volumes:
-      - /home/ec2-user/test-ci-cd/web/:/var/www/html
-      - nginx.conf:/etc/nginx/conf.d
-      - certbot-etc:/etc/letsencrypt
+      - ./web:/var/www/html
+      - ./nginx.conf:/etc/nginx/conf.d
+    #   - certbot-etc:/etc/letsencrypt
     networks:
       - external
 
@@ -55,7 +55,7 @@ networks:
   internal:
     driver: bridge
 
-volumes:
-#   drupal-data:/home/ec2-user/test-ci-cd/web/
-#   db-data:/home/ec2-user/test-ci-cd/db/
+# volumes:
+#   drupal-data:
+#   db-data:
 #   certbot-etc:
